@@ -10,6 +10,19 @@ public class ApplicationContext {
 
     private Map<Class<?>, Object> beanCache = new HashMap<>();
 
+    private static ApplicationContext instance;
+
+    public static ApplicationContext getInstance() {
+        if (instance == null) {
+            synchronized (ApplicationContext.class) {
+                if (instance == null) {
+                    instance = new ApplicationContext();
+                }
+            }
+        }
+        return instance;
+    }
+
     public <T> T getBean(Class<T> requiredType) {
         if (!beanCache.containsKey(requiredType)) {
             return null;

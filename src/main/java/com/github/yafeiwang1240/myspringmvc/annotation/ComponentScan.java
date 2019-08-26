@@ -28,6 +28,5 @@ public @interface ComponentScan {
         Class<?>[] classes() default {};
 
         String[] pattern() default {};
-
     }
 }
