@@ -1,2 +1,2 @@
 # MySpringMVC
-### 手写SpringMVC核心框架，支持拦截
+### 轻量级SpringMVC核心框架，支持拦截
