@@ -4,6 +4,10 @@ import com.github.yafeiwang1240.myspringmvc.enums.FilterType;
 
 import java.lang.annotation.*;
 
+/**
+ * packages scan
+ * @author wangyafei
+ */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
 @Documented

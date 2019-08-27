@@ -4,6 +4,10 @@ import com.github.yafeiwang1240.myspringmvc.enums.RequestMethod;
 
 import java.lang.annotation.*;
 
+/**
+ * 映射表
+ * @author wangyafei
+ */
 @Documented
 @Target({ElementType.TYPE, ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)

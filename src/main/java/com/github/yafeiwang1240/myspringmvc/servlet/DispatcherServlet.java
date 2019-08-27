@@ -3,12 +3,11 @@ package com.github.yafeiwang1240.myspringmvc.servlet;
 import javax.servlet.Servlet;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class DispatcherServlet extends HttpServlet {
+public class DispatcherServlet extends FrameworkServlet {
 
     /**
      *
