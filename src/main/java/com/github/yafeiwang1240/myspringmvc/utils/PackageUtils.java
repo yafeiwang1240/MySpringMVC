@@ -23,6 +23,8 @@ public abstract class PackageUtils {
 
     private static final Map<String, List<Class<?>>> packageClassCache = new HashMap<>();
 
+    private static Map<Class<?>, List<Class<?>>> assignCache = new HashMap<>();
+
     static {
         URL root = PackageUtils.class.getResource("/");
         final ClassLoader contextCL = Thread.currentThread().getContextClassLoader();
@@ -106,6 +108,35 @@ public abstract class PackageUtils {
             result = getAndCachePackageClasses(packageName);
         }
         return new ArrayList<>(result);
+    }
+
+    /**
+     * 获取此类及其继承（实现类），（可能）包含自身
+     * @param assignClass
+     * @param <T>
+     * @return
+     */
+    public static <T> List<Class<T>> getAssignClasses(Class<T> assignClass) {
+        List<Class<?>> assign;
+        if ((assign = assignCache.get(assignClass)) == null) {
+            assign = getAndCacheAssignClasses(assignClass);
+        }
+        List<Class<T>> result = new ArrayList(assign.size());
+        for (Class<?> clazz : assign) {
+            result.add((Class<T>) clazz);
+        }
+        return result;
+    }
+
+    private synchronized static <T> List<Class<?>> getAndCacheAssignClasses(Class<T> assignClass) {
+        if (assignCache.containsKey(assignClass)) return assignCache.get(assignClass);
+        List<Class<?>> classes = new ArrayList();
+        for (Map.Entry<String, Class<?>> entry : classCache.entrySet()) {
+            if (assignClass.isAssignableFrom(entry.getValue())) {
+                classes.add(entry.getValue());
+            }
+        }
+        return classes;
     }
 
     private synchronized static List<Class<?>> getAndCachePackageClasses(String packageName) {

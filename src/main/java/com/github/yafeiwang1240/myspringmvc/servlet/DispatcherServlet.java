@@ -160,7 +160,11 @@ public class DispatcherServlet extends FrameworkServlet {
      */
     @Override
     public void init() throws ServletException {
+        try {
 
+        } catch (Throwable e) {
+            throw new ServletException(e.getMessage(), e);
+        }
     }
 
     /**
