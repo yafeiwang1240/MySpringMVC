@@ -1,6 +1,5 @@
 package com.github.yafeiwang1240.myspringmvc.beans.factory;
 
-import com.github.yafeiwang1240.myspringmvc.context.ApplicationContext;
 import com.github.yafeiwang1240.myspringmvc.context.event.ContextClosedEvent;
 import com.github.yafeiwang1240.myspringmvc.context.event.ContextRefreshedEvent;
 import com.github.yafeiwang1240.myspringmvc.context.event.ContextStartedEvent;

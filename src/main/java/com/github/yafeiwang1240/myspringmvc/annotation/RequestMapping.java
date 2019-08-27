@@ -1,6 +1,6 @@
 package com.github.yafeiwang1240.myspringmvc.annotation;
 
-import com.github.yafeiwang1240.myspringmvc.enums.RequestMethod;
+import com.github.yafeiwang1240.myspringmvc.annotation.enums.RequestMethod;
 
 import java.lang.annotation.*;
 

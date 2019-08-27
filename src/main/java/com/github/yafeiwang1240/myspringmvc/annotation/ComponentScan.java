@@ -1,6 +1,6 @@
 package com.github.yafeiwang1240.myspringmvc.annotation;
 
-import com.github.yafeiwang1240.myspringmvc.enums.FilterType;
+import com.github.yafeiwang1240.myspringmvc.annotation.enums.FilterType;
 
 import java.lang.annotation.*;
 

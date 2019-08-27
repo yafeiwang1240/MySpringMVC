@@ -1,4 +1,4 @@
-package com.github.yafeiwang1240.myspringmvc.exception;
+package com.github.yafeiwang1240.myspringmvc.utils.exception;
 
 public class NoSuchClassException extends Exception {
 
